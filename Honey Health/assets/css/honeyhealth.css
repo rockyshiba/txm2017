@@ -1,0 +1,33 @@
+#honey__honeycomb_container{
+    position: relative;
+}
+
+.honey__honeycomb{
+    display: inline-block;
+    position: relative;
+}
+
+.honey__img_honeycomb{
+
+}
+
+.honey__img_bee{
+    position: absolute;
+    top: 0;
+}
+
+/*BEES*/
+#honey__img_bee_1{
+    top: 25%;
+    right: -30px;
+}
+
+#honey__img_bee_2{
+    top: -50px;
+    right: 30px;
+}
+
+#honey__img_bee_3{
+    
+}
+/*END BEES*/
