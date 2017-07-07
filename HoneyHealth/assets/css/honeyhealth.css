@@ -30,6 +30,10 @@
     margin: 43.30px 0;
     border-left: solid 5px black;
     border-right: solid 5px black;
+    background-image: url("../images/honey_questionMark.png");
+    background-size: auto 100px;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .honey__large{
@@ -42,76 +46,136 @@
 
 .honey__small{
     width: 100px;
-    height:57.74px;
+    height: 57.74px;
     margin: 28.87px 0;
     border-left: solid 5px black;
     border-right: solid 5px black;
+    background-size: auto 70px;
 }
 
-.honey__honeycomb:before, .honey__honeycomb:after{
-    content: "";
+.honey__honeycomb_top, .honey__honeycomb_bottom{
     position: absolute;
     z-index: 1;
-    height: 106.07px;
     width: 106.07px;
+    height: 106.07px;
+    overflow: hidden;
     -webkit-transform: scaleY(0.5774) rotate(-45deg);
     -ms-transform: scaleY(0.5774) rotate(-45deg);
     transform: scaleY(0.5774) rotate(-45deg);
-    background-color: inherit;
-    left: 16.9670px;
+    background-color: orange;
+    left: 16.97px;
 }
 
-.honey__honeycomb:before{
+.honey__honeycomb_top:after, .honey__honeycomb_top:after{
+    content: "";
+    position: absolute;
+    width: 140.0000px;
+    height: 80.82903768654762px;
+    -webkit-transform:  rotate(45deg) scaleY(1.7321) translateY(-40.4145px);
+    -ms-transform:      rotate(45deg) scaleY(1.7321) translateY(-40.4145px);
+    transform:          rotate(45deg) scaleY(1.7321) translateY(-40.4145px);
+    -webkit-transform-origin: 0 0;
+    -ms-transform-origin: 0 0;
+    transform-origin: 0 0;
+    background: inherit;
+}
+
+.honey__honeycomb_top{
     top: -53.0330px;
     border-top: solid 7.0711px black;
     border-right: solid 7.0711px black;
 }
 
-.honey__honeycomb:after{
+.honey__honeycomb_top:after{
+    background-position: center top;
+}
+
+.honey__honeycomb_bottom{
     bottom: -53.0330px;
     border-bottom: solid 7.0711px black;
     border-left: solid 7.0711px black;
 }
 
-.honey__large:before, .honey__large:after{
-    width: 141.42px;
-    height: 141.42px;
-    left: 24.2893px;
+.honey__honeycomb_bottom:after{
+    background-position: center bottom;
 }
 
-.honey__large:before{
+.honey__honeycomb:after{
+    content: "";
+    position: absolute;
+    top: 2.8868px;
+    left: 0;
+    width: 140.0000px;
+    height: 80.8290px;
+    z-index: 2;
+    background: inherit;
+}
+
+.honey__large > .honey__honeycomb_top, 
+.honey__large > .honey__honeycomb_bottom{
+    width: 141.42px;
+    height: 141.42px;
+    left: 24.29px;
+}
+
+.honey__large > .honey__honeycomb_top:after, 
+.honey__large > .honey__honeycomb_bottom:after{
+    width: 190px;
+    height: 109.69655114602891px;
+    -webkit-transform:  rotate(45deg) scaleY(1.7321) translateY(-54.8483px);
+    -ms-transform:      rotate(45deg) scaleY(1.7321) translateY(-54.8483px);
+    transform:          rotate(45deg) scaleY(1.7321) translateY(-54.8483px);
+}
+
+.honey__large > .honey__honeycomb_top{
     top: -70.7107px;
-    border-top: solid 7.0711px black;
-    border-right: solid 7.0711px black;
+}
+
+.honey__large > .honey__honeycomb_bottom{
+    bottom: -70.7107px;
 }
 
 .honey__large:after{
-    bottom: -70.7107px;
-    border-bottom: solid 7.0711px black;
-    border-left: solid 7.0711px black;
+    width: 190px;
+    height: 109.6966px;
 }
 
-.honey__small:before, .honey__small:after{
+.honey__small > .honey__honeycomb_top,
+.honey__small > .honey__honeycomb_bottom{
     width: 70.71px;
     height: 70.71px;
-    left: 9.6447px;
+    left: 9.64px;
 }
 
-.honey__small:before{
+.honey__small > .honey__honeycomb_top:after,
+.honey__small > .honey__honeycomb_bottom:after{
+    width: 90px;
+    height: 51.96152422706633px;
+    -webkit-transform:  rotate(45deg) scaleY(1.7321) translateY(-25.9808px);
+    -ms-transform:      rotate(45deg) scaleY(1.7321) translateY(-25.9808px);
+    transform:          rotate(45deg) scaleY(1.7321) translateY(-25.9808px);
+}
+
+.honey__small > .honey__honeycomb_top{
     top: -35.3553px;
-    border-top: solid 7.0711px black;
-    border-right: solid 7.0711px black;
+}
+
+.honey__small > .honey__honeycomb_bottom{
+    bottom: -35.3553px;
 }
 
 .honey__small:after{
-    bottom: -35.3553px;
-    border-bottom: solid 7.0711px black;
-    border-left: solid 7.0711px black;
+    width: 90px;
+    height: 51.9615px;
 }
 /*END honeycombs*/
 
 .honey__img_honeycomb{
     
+}
+
+.honey__img_question{
+
 }
 
 .honey__img_bee{
