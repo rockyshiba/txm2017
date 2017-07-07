@@ -111,23 +111,29 @@
 /*END honeycombs*/
 
 .honey__img_honeycomb{
-
+    
 }
 
 .honey__img_bee{
-
+    position: absolute;
+    z-index: 10;
+    height: 50px;
 }
 
 /*BEES*/
 #honey__img_bee_1{
-
+    top: -20px;
+    left: 100px;
 }
 
 #honey__img_bee_2{
-
+    height: 75px;
+    top: -45px;
+    left: 72%;
 }
 
 #honey__img_bee_3{
-    
+    top: -22px;
+    left: -37px;
 }
 /*END BEES*/
