@@ -1,3 +1,21 @@
+#honey{
+    padding-top: 200px;
+}
+
+#honey > h1{
+    font-size: 50pt;
+    color: #d37b1c;
+}
+
+.honey__text{
+    font-size: 18pt;
+    color: #000000;
+}
+
+.honey__text-orange{
+    color: #d37b1c;
+}
+
 #honey__honeycomb_container{
     position: relative;
 }
@@ -201,6 +219,11 @@
     top: -22px;
     left: -37px;
 }
+
+#honey__img_bee_4{
+    right: -43px;
+    top: 82%;
+}
 /*END BEES*/
 
 /*CLICKME ARROW*/
@@ -243,7 +266,7 @@
 
 .honey__fact > button{
     position: absolute;
-    bottom: 0;
+    bottom: -60px;
     left: 160px;
     z-index: 30;
 }
@@ -274,5 +297,7 @@
     border-left: solid 7.0711px black;
 }
 
-
+#honey__fact-text{
+    font-size: 15pt;
+}
 /*END HONEY FACTS*/
