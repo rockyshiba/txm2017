@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="../global/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="./assets/css/honeyhealth.css">
+        <script src="../global/js/jquery-3.2.1.min.js"></script>
         <script src="../global/js/bootstrap.min.js"></script>
     </head>
     <body>
@@ -12,7 +13,7 @@
             
         </header>
         <main>
-            <div class="container">
+            <div class="container"><!--BEGIN container-->
                 <div class="row">
                     <h1 class="text-center">The Buzz on the Bees</h1>
                     <div class="col-lg-2 text-uppercase">
@@ -20,33 +21,38 @@
                     </div>
                     <div id="honey__honeycomb_container" class="col-lg-8">
                         <div class="honey__row">
-                            <div class="honey__honeycomb text-center">
+                            <div class="honey__honeycomb text-center" data-text="Honey contains about 69% glucose and fructose and con be used as a healthier substitute for sugar in many foods and drinks">
                                 <div class="honey__honeycomb_top"></div>
                                 <div class="honey__honeycomb_bottom"></div>
                                 <img id="honey__img_bee_1" class="honey__img_bee" src="./assets/images/honey_orangeBee.png" alt="Orange bee">
                             </div>
-                            <div class="honey__honeycomb">
+                            <div class="honey__honeycomb" data-text="A sealed jar of honey could remain edible for thousands of years. Edible honey has been found in ancient Egyptian tombs.">
                                 <div class="honey__honeycomb_top"></div>
                                 <div class="honey__honeycomb_bottom"></div>
                             </div>
                         </div>
                         <div class="honey__row">
-                            <div class="honey__honeycomb">
+                            <div class="honey__honeycomb" data-text="Honey has the ability to kill bacteria and quickly clear infections. In fact, the
+bacteria-fighting component of honey was once known as “Penicillin A”.">
                                 <div class="honey__honeycomb_top"></div>
                                 <div class="honey__honeycomb_bottom"></div>
                             </div>
-                            <div class="honey__honeycomb honey__large">
+                            <div class="honey__honeycomb honey__large" data-text='Honey is the only food that contains "pinocembrin", an antioxidant associated with
+improved brain functioning.'>
                                 <div class="honey__honeycomb_top"></div>
                                 <div class="honey__honeycomb_bottom"></div>
                                 <img id="honey__img_bee_2" class="honey__img_bee" src="./assets/images/honey_yellowBee.png" alt="Yellow bee">
                             </div>
-                            <div class="honey__honeycomb honey__large">
+                            <div class="honey__honeycomb honey__large" data-text="Honey is the only food that includes all the substances necessary to sustain life,
+including enzymes, vitamins, minerals, and water.">
                                 <div class="honey__honeycomb_top"></div>
                                 <div class="honey__honeycomb_bottom"></div>
+                                <img id="honey__img_clickme" src="./assets/images/honey_clickme.png" alt="Click me sign">
                             </div>
                         </div>
                         <div class="honey__row">
-                            <div class="honey__honeycomb honey__small">
+                            <div class="honey__honeycomb honey__small" data-text="Honey is actually bee vomit in dehydrated form. The worker bees flap their wings to dry
+it.">
                                 <div class="honey__honeycomb_top"></div>
                                 <div class="honey__honeycomb_bottom"></div>
                                 <img id="honey__img_bee_3" class="honey__img_bee" src="./assets/images/honey_orangeBee.png" alt="Orange bee">
@@ -57,13 +63,34 @@
                         <p>Each hive can produce up to 80,000 bees over a season - that’s nearly a ¼ million bees!</p>
                     </div>
                 </div>
-                <div class="row">
-                    
+            </div><!--END of container-->
+            <div id="honey__fact-container" class="text-uppercase text-center">
+                <div class="honey__fact">
+                    <button id="honey__btn-close" type="button" class="btn btn-default">CLOSE</button>
                 </div>
+                <p id="honey__fact-text"></p>
             </div>
         </main>
         <footer>
             
         </footer>
+        <script>
+            $(".honey__honeycomb").click(function(){
+                $("#honey__fact-container").css("display", "block");
+                $("#honey__fact-text").html(
+                    $(this).data("text")
+                );
+                $(this).css("background-image", "url(./assets/images/honey_beehive.png)");
+                $(this).css("background-size", "auto 68px");
+                if($(this).hasClass("honey__small")){
+                    $(this).css("background-size", "auto 46px");
+                }
+            });
+
+            $("#honey__btn-close").click(function(){
+                console.log("clicked");
+                $("#honey__fact-container").css("display", "none");
+            });
+        </script>
     </body>
 </html>

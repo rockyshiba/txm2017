@@ -34,6 +34,7 @@
     background-size: auto 100px;
     background-repeat: no-repeat;
     background-position: center;
+    cursor: pointer;
 }
 
 .honey__large{
@@ -201,3 +202,77 @@
     left: -37px;
 }
 /*END BEES*/
+
+/*CLICKME ARROW*/
+#honey__img_clickme{
+    position: absolute;
+    top: -100px;
+    left: 110px;
+    height: 80%;
+}
+/*END CLICKME ARROW*/
+
+/*HONEY FACTS*/
+#honey__fact-container{
+    position: fixed;
+    top: 10%;
+    width: 100%;
+    height: 100%;
+    z-index: 20;
+    display: none;
+    /*background-color: rgba(255,255,255,0.5);*/
+}
+
+#honey__fact-container > p{
+    top: -285px;
+    position: relative;
+    max-width: 380px;
+    margin: 0 auto;
+    z-index: 10;
+}
+
+.honey__fact{
+    position: relative;
+    width: 400px; 
+    height: 230.94px;
+    background-color: white;
+    margin: 115.47px auto;
+    border-left: solid 5px black;
+    border-right: solid 5px black;
+}
+
+.honey__fact > button{
+    position: absolute;
+    bottom: 0;
+    left: 160px;
+    z-index: 30;
+}
+
+.honey__fact:before,
+.honey__fact:after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    width: 282.84px;
+    height: 282.84px;
+    -webkit-transform: scaleY(0.5774) rotate(-45deg);
+    -ms-transform: scaleY(0.5774) rotate(-45deg);
+    transform: scaleY(0.5774) rotate(-45deg);
+    background-color: inherit;
+    left: 53.5786px;
+}
+
+.honey__fact:before {
+    top: -141.4214px;
+    border-top: solid 7.0711px black;
+    border-right: solid 7.0711px black;
+}
+
+.honey__fact:after {
+    bottom: -141.4214px;
+    border-bottom: solid 7.0711px black;
+    border-left: solid 7.0711px black;
+}
+
+
+/*END HONEY FACTS*/
