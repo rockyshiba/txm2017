@@ -3,16 +3,29 @@
     background-color: pink;
     font-size: 30pt;
     display: inline-block;
-    width: 100%;
-    /*transform-origin: left top 0;*/
+    width: 45pt;
+    float: left;
 }
 
 .profile-banner > p{
     display: inline-block;
+    float:left;
+    margin: 10pt;
+}
+
+.profile-banner > p > span{
+    display: block;
+    line-height: 1.0;
+    transform: rotate(-90deg);
+}
+
+.profile-banner > p > span:last-child{
+    transform: rotate(0deg);
 }
 
 .open-quote{
     content: open-quote;
+    display: inline-block;
 }
 
 .profile-subheader{
@@ -24,4 +37,8 @@
 .profile-description{
     margin-top: 20px;
     font-size: 18pt;
+}
+
+.alumni-profile img{
+    max-width: 100%;
 }
