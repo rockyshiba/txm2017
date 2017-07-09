@@ -1,0 +1,27 @@
+.profile-banner{
+    color: white;
+    background-color: pink;
+    font-size: 30pt;
+    display: inline-block;
+    width: 100%;
+    /*transform-origin: left top 0;*/
+}
+
+.profile-banner > p{
+    display: inline-block;
+}
+
+.open-quote{
+    content: open-quote;
+}
+
+.profile-subheader{
+    color: purple;
+    margin: 0;
+    font-size: 14pt;
+}
+
+.profile-description{
+    margin-top: 20px;
+    font-size: 18pt;
+}
