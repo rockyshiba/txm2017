@@ -1,4 +1,12 @@
 .profile-banner{
+    background-color: #FF4166;
+}
+
+.profile-subheader{
+    color: #6E58B1;
+}
+
+/*.profile-banner{
     color: white;
     background-color: pink;
     font-size: 30pt;
@@ -41,4 +49,4 @@
 
 .alumni-profile img{
     max-width: 100%;
-}
+}*/
