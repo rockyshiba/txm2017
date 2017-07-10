@@ -1,0 +1,45 @@
+.tasty__video_container{
+    height: 80%;
+}
+
+.tasty__banner{
+    width: 10%;
+    height: 100%;
+    display: inline-block;
+    color: white;
+    float: left;
+}
+
+.tasty__banner > span{
+    display: block;
+    line-height: 1.0;
+    transform: rotate(-90deg);
+}
+
+.tasty__video{
+    display: inline-block;
+    width: 89%;
+}
+
+.tasty__recipe_icon{
+    max-height: 25pt;
+}
+
+.tasty__recipe_link{
+    margin-top: 20px;
+    border: none;
+    border-radius: 0;
+    background-color: #6E58B1;
+    color: white;
+    box-shadow: -5px 5px 0px #B9A4F8;
+}
+
+.tasty__recipe_link:hover{
+    background-color: #A085DF;
+    color: white;
+}
+
+.dark-purple{
+    color: #6E58B1;
+}
+

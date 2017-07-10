@@ -1,0 +1,9 @@
+.tasty__banner{
+    width: 10%;
+}
+
+.tasty__banner > span{
+    display: block;
+    line-height: 1.0;
+    transform: rotate(-90deg);
+}
