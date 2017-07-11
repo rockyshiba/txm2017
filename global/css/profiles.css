@@ -3,14 +3,12 @@
     background-color: pink;
     font-size: 30pt;
     display: inline-block;
-    width: 45pt;
     float: left;
+    padding: 10pt;
 }
 
-.profile-banner > p{
-    display: inline-block;
-    float:left;
-    margin: 10pt;
+.profile-banner > img{
+    width: 30pt;
 }
 
 .profile-banner > p > span{
@@ -19,13 +17,17 @@
     transform: rotate(-90deg);
 }
 
-.profile-banner > p > span:last-child{
-    transform: rotate(0deg);
-}
-
 .open-quote{
     content: open-quote;
     display: inline-block;
+}
+
+.profile-content{
+    margin-left: 80px;
+}
+
+.profile-content h2{
+    margin-top: 0;
 }
 
 .profile-subheader{
