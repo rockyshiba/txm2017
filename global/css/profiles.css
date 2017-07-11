@@ -1,4 +1,9 @@
+.alumni-profile{
+    padding-top: 100px;
+}
+
 .profile-banner{
+    position: absolute;
     color: white;
     background-color: pink;
     font-size: 30pt;
