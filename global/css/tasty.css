@@ -5,6 +5,7 @@
 .tasty__banner{
     display: inline-block;
     color: white;
+    background-color: #6E58B1;
     float: left;
     position: relative;
     width: 50pt;
