@@ -1,19 +1,33 @@
 .tasty__video_container{
-    height: 80%;
+    display: flex;
 }
 
 .tasty__banner{
-    width: 10%;
-    height: 100%;
     display: inline-block;
     color: white;
     float: left;
+    position: relative;
+    width: 50pt;
+    padding: 5pt 10pt;
 }
 
-.tasty__banner > span{
+.tasty__banner_content{
+    position: absolute;
+    bottom: 5pt;
+}
+
+.tasty__banner  p{
+    font-size: 30pt;
+}
+
+.tasty__banner span{
     display: block;
-    line-height: 1.0;
+    /* line-height: 1.0; */
     transform: rotate(-90deg);
+}
+
+.tasty__banner img{
+    width: 30pt;
 }
 
 .tasty__video{
