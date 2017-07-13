@@ -1,0 +1,56 @@
+.infographic{
+    position: relative;
+}
+
+.infographic__column{
+    padding: 0;
+}
+
+.infographic__banner{
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 15pt;
+    z-index: 100;
+}
+
+.infographic__banner span{
+    display: block;
+    transform: rotate(-90deg);
+}
+
+.infographic__banner img{
+    width: 15pt;
+}
+
+.infographic__block{
+    height: 400px;
+    position: relative;
+    background-color: blue;
+}
+
+.infographic__block > .infographic__block-content{
+    padding: 40px;
+    background:rgba(0,0,0,0.2);
+    height: 100%;
+    display: none;
+    color: white;
+}
+
+.infographic__block:hover > .infographic__block-content{
+    display: block;
+}
+
+#infographic__column-1 > .infographic__block:first-child{
+    margin-bottom: 100px;
+}
+
+#infographic__column-2 > .infographic__block:first-child{
+    height: 200px;
+}
+
+#infographic__column-3 > .infographic__block:first-child{
+    margin-top: 125px;
+    margin-bottom: 100px;
+    height: 275px;
+}
