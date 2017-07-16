@@ -1,0 +1,55 @@
+#h2o__facts, #h2o__facts .row{
+    background-color: #C7E04C;
+}
+
+#h2o__facts .infographic__block > .infographic__block-content{
+    display: block;
+    background: transparent;
+    font-size: 29px;
+}
+
+#h2o__facts #infographic__header{
+    background-color: white;
+}
+
+#h2o__facts #infographic__header > p{
+    color: #B4C43C;
+    font-family: Roboto;
+    font-size: 18pt;
+}
+
+#h2o__facts .infographic__block:nth-child(2){
+    height: 365px;
+}
+
+#h2o__facts #infographic__column-2 #infographic__header{
+    margin-top: 200px;
+}
+
+#h2o__facts #infographic__column-2 .infographic__block, #h2o__facts #infographic__column-2 .infographic__block-content {
+    height: 245px;
+}
+
+#h2o__facts #infographic__column-3 .infographic__block:first-child{
+    height: 700px;
+    position: relative;
+}
+
+#h2o__facts #infographic__column-3 .infographic__block:first-child p{
+    position: absolute;
+    bottom: 50px;
+    width: 100%;
+    left: 0;
+    /* padding-right: 50px; */
+    padding: 50px;
+    background-color: rgba(199,224,76, 0.7);
+}
+
+/* #h2o__facts #infographic__column-3 .infographic__block:first-child p::after{
+    position: absolute;
+    content: " ";
+    height: 100%;
+    width: 150%;
+    right: 0;
+    background-color: rgba(199,224,76, 0.7);
+} */
