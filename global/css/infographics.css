@@ -9,9 +9,19 @@
 .infographic__banner{
     position: absolute;
     top: 0;
-    left: 0;
-    font-size: 15pt;
+    left: -14px;
+    font-size: 13pt;
     z-index: 100;
+    color: white;
+    width: 40px;
+    height: 400px;
+    background-color: rgba(199,224,76, 0.7);
+}
+
+.infographic__banner > p{
+    position: absolute;
+    margin-left: 15px;
+    bottom: 80px;
 }
 
 .infographic__banner span{
@@ -20,18 +30,34 @@
 }
 
 .infographic__banner img{
-    width: 15pt;
+    position: absolute;
+    bottom: 15px;
+    width: 30pt;
+    margin-top: 15px;
+}
+
+#infographic__header{
+    padding-top: 30px;
+    padding-bottom: 20px;
+}
+
+#infographic__header > h2{
+    margin-top: 0;
+}
+
+#infographic__header > p{
+    margin-bottom: 0;
 }
 
 .infographic__block{
     height: 400px;
     position: relative;
-    background-color: blue;
+    background-size: cover;
 }
 
 .infographic__block > .infographic__block-content{
-    padding: 40px;
-    background:rgba(0,0,0,0.2);
+    padding: 50px;
+    background:rgba(0,0,0,0.7);
     height: 100%;
     display: none;
     color: white;
@@ -41,7 +67,7 @@
     display: block;
 }
 
-#infographic__column-1 > .infographic__block:first-child{
+/* #infographic__column-1 > .infographic__block:first-child{
     margin-bottom: 100px;
 }
 
@@ -53,4 +79,4 @@
     margin-top: 125px;
     margin-bottom: 100px;
     height: 275px;
-}
+} */

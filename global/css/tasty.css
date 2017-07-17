@@ -5,9 +5,9 @@
 .tasty__banner{
     display: inline-block;
     color: white;
-    background-color: #6E58B1;
     float: left;
     position: relative;
+    height: 350px;
     width: 50pt;
     padding: 5pt 10pt;
 }
@@ -19,9 +19,12 @@
 
 .tasty__banner  p{
     font-size: 30pt;
+    margin-bottom: 40px;
 }
 
 .tasty__banner span{
+    margin-bottom: -30px;
+    text-align: center;
     display: block;
     /* line-height: 1.0; */
     transform: rotate(-90deg);
@@ -29,6 +32,14 @@
 
 .tasty__banner img{
     width: 30pt;
+}
+
+.social__media{
+    position: absolute;
+    bottom: -100px;
+    left: 0;
+    width: 100%;
+    background-color: white;
 }
 
 .tasty__video{
@@ -40,11 +51,10 @@
     max-height: 25pt;
 }
 
-.tasty__recipe_link{
+.tasty__recipe-link{
     margin-top: 20px;
     border: none;
     border-radius: 0;
-    background-color: #6E58B1;
     color: white;
     box-shadow: -5px 5px 0px #B9A4F8;
 }
@@ -54,7 +64,82 @@
     color: white;
 }
 
+.tasty__ingredients > li{
+    list-style-type: none;
+    font-size: 18pt;
+    font-weight: 400;
+}
+
+.tasty__recipe-btn{
+    border: none;
+    border-radius: 0px;
+    color: white;
+}
+
 .dark-purple{
     color: #6E58B1;
 }
 
+.dark-purple-bg{
+    background-color: #6E58B1;
+}
+
+a.dark-purple-bg:hover{
+    background-color: #A085DF;
+}
+
+.dark-purple-shadow{
+    box-shadow: -5px 5px 0px #6E58B1;
+}
+
+.med-purple{
+    color: #A085DF;
+}
+
+.light-purple{
+    color: #B9A4F8;
+}
+
+.light-purple-bg{
+    background-color: #B9A4F8;
+}
+
+.light-purple-shadow{
+    box-shadow: -5px 5px 0 #B9A4F8;
+}
+
+.dark-blue{
+    color: #0FBDEC;
+}
+
+.dark-blue-bg{
+    background-color: #0FBDEC;
+}
+
+.dark-blue-shadow{
+    box-shadow: -5px 5px 0px #0FBDEC;
+}
+
+.med-blue{
+    color: #3AC8E9;
+}
+
+.med-blue-bg{
+    background-color: #3AC8E9;
+}
+
+.med-blue-shadow{
+    box-shadow: -5px 5px 0px #3AC8E9;
+}
+
+.light-blue{
+    color: #66D5EE;
+}
+
+.light-blue-bg{
+    background-color: #66D5EE;
+}
+
+.light-blue-shadow{
+    box-shadow: -5px 5px 0px #66D5EE;
+}

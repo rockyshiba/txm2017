@@ -1,0 +1,27 @@
+#tea__info, #tea__info .infographic__banner, #tea__info .row{
+    background-color: #C7E04C;
+}
+
+#tea__info #infographic__header{
+    background-color: white;
+}
+
+#tea__info #infographic__header > p{
+    color: #B4C43C;
+    font-family: Roboto;
+    font-size: 18pt;
+}
+
+#tea__info #infographic__column-1 > .infographic__block:first-child{
+    margin-bottom: 100px;
+}
+
+#tea__info #infographic__column-2 > .infographic__block:first-child{
+    height: 250px;
+}
+
+#tea__info #infographic__column-3 > .infographic__block:first-child{
+    margin-top: 125px;
+    margin-bottom: 100px;
+    height: 275px;
+} 
