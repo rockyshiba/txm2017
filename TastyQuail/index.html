@@ -4,8 +4,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="../global/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="../global/font-awesome/css/font-awesome.min.css">
         <link rel="stylesheet" type="text/css" href="../global/css/tasty.css">
-        <link rel="stylesheet" type="text/css" href="./assets/css/tasty-salami.css">
         <script src="../global/js/jquery-3.2.1.min.js"></script>
         <script src="../global/js/bootstrap.min.js"></script>
     </head>
@@ -14,8 +14,8 @@
         </header>
         <main style="position: absolute; top: 0; left: 0; height: 100%; width: 100%;">
             <div class="container"><!--BEGIN container-->
-                <div id="tasty__salmon" class="tasty__video_container">
-                    <div class="tasty__banner text-uppercase">
+                <section id="tasty__salami" class="tasty__video_container">
+                    <div class="tasty__banner text-uppercase dark-purple-bg">
                         <div class="tasty__banner_content">
                             <p>
                                 <span>o</span>
@@ -25,22 +25,64 @@
                                 <span>v</span>
                             </p>
                             <img src="../global/images/tasty_video.png" alt="Video icon">
+                            <div class="social__media dark-blue text-center">
+                                <div>
+                                    <a href=""><i class="fa fa-twitter fa-2x dark-purple" aria-hidden="true"></i></a>     
+                                </div>
+                                <br>
+                                <div>
+                                    <a href=""><i class="fa fa-facebook fa-2x dark-purple" aria-hidden="true"></i></a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="tasty__video">
-                        <video width="100%" height="100%" controls src="./assets/videos/tasty_salami.m4v">
-                            <source src="./assets/videos/tasty_salami.m4v" type="video/m4v">
+                        <video width="100%" height="100%" controls src="./assets/videos/tasty_quail.mp4" type="video/mp4">
+                            <source src="./assets/videos/tasty_salami.m4v" type="video/mp4">
                         </video>
                     </div>
-                </div>
+                </section>
                 <div class="tasty__recipe_container">
                     <div class="row">
                         <div class="col-lg-6 col-lg-offset-2">
-                            <h2><img src="../global/images/tasty_recipe.png" alt="Recipe icon" class="tasty__recipe_icon"><span class="dark-purple">RECIPE:</span> Quail</h2>
-                            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+                            <h2><img src="../global/images/tasty_recipe.png" alt="Recipe icon" class="tasty__recipe_icon"><span class="dark-purple">RECIPE:</span> Tasty Quail</h2>
                         </div>
                         <div class="col-lg-2">
-                            <a target="_blank" href="#" class="btn btn-default text-uppercase tasty__recipe_link">Check the recipe<span class="glyphicon glyphicon-new-window"></span></a>
+                            <a href="#tasty__recipe-subheader" class="btn btn-info text-uppercase tasty__recipe-link dark-purple-bg light-purple-shadow">Check the recipe <i class="fa fa-angle-down fa-lg" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                    <div class="row" style="display: flex;">
+                        <div class="col-lg-5 tasty__recipe-column">
+                            <h4 id="tasty__recipe-subheader" class="light-purple"><em>Center for Healthy Living nutrition student recipe:</em></h4>
+                            <h3><strong>Organic greens</strong></h3>
+                            <p class="tasty__ingredients">Quail egg, taggiasca olives, toasted pumpkin seeds, cucumbers, bell peppers, bermuda onions, roma tomatoes, white truffle essence balsamic vinaigrette</p>
+                            <ul class="tasty__ingredients">
+                                <li><strong>Ingredients</strong></li>
+                                <li>90 grams Organic greens, loosely packed</li>
+                                <li>1 quail egg</li>
+                                <li>4 tsp pumpkin seeds</li>
+                                <li>Cucumbers</li>
+                                <li>Bell peppers</li>
+                                <li>Red peppers</li>
+                                <li>Bermuda onions</li>
+                                <li>Tomatoes</li>
+                                <li><br>5 ml white truffle oil</li>
+                                <li>5 ml balsami vinegar</li>
+                                <li>15 ml olive oil</li>
+                            </ul>
+                            <p>These recipes were featured on the Humber Room’s menu last season. For high-end fine dining visit the Humber Room.</p>
+                            <a href="" class="btn btn-info text-uppercase tasty__recipe-btn dark-purple-bg">Download the recipe <i class="fa fa-download" aria-hidden="true"></i></a>
+                        </div>
+                        <div class="col-lg-7 tasty__recipe-column" style="background: url('./assets/images/tasty_quail.jpg'); background-position: center center;">
+                            <!-- <img src="./assets/images/tasty_quail.jpg" alt="A salami salad recipe"> -->
+                            <ol class="tasty__ingredients tasty__recipe-purple">
+                                <li>Prepare your mise en place for the organic greens, cucumbers (julienne), bell peppers (julienne), bermuda onions (julienne), and tomatoes (dice).</li>
+                                <li>Prepare your vinaigrette. Start an emulsion in a blender with the balsamic vinegar and white truffle oil. Once the emulsion starts, add a slow stream of olive oil. The emulsion will slowly come together.</li>
+                                <li>Toss your organic greens with the vinaigrette.</li>
+                                <li>Fry your quail egg sunny-side up in a hot non-stick pan with oil for a minute.</li>
+                                <li>Plate your quail egg on top of the organic greens.</li>
+                            </ol>
+                            
                         </div>
                     </div>
                 </div>

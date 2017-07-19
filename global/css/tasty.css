@@ -49,6 +49,7 @@
 
 .tasty__recipe_container{
     position: relative;
+    background-color: white;
 }
 
 .tasty__recipe_container::after{
@@ -58,16 +59,17 @@
     right: 20%;
     width: 40%;
     height: 40px;
-    background-color: blue;
+    background-color: transparent;
 }
 
 .tasty__recipe_container img{
     max-width: 100%;
-    margin-top: 30px;
 }
 
 .tasty__recipe_icon{
     max-height: 25pt;
+    margin-top: 0;
+    margin-right: 10px;
 }
 
 .tasty__recipe-link{
@@ -83,16 +85,51 @@
     color: white;
 }
 
-.tasty__ingredients > li{
-    list-style-type: none;
+.tasty__ingredients{
     font-size: 18pt;
     font-weight: 400;
+}
+
+ul.tasty__ingredients > li{
+    list-style-type: none;
+}
+
+.col-lg-7.tasty__recipe-column{
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.tasty__recipe-blue{
+    color: white;
+    background: rgba(58,200,233, 0.5);
+    width: 175%;
+    position: absolute;
+    bottom: 0;
+    left: 100%;
+}
+
+.tasty__recipe-purple{
+    color: white;
+    background: rgba(110,88,177, 0.7);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    position: absolute;
+    bottom: 10px;
+
+}
+
+.tasty__recipe-purple li{
+    margin-bottom: 5px;
 }
 
 .tasty__recipe-btn{
     border: none;
     border-radius: 0px;
     color: white;
+}
+
+.tasty__recipe-img{
+    margin-top: 30px;
 }
 
 .dark-purple{
