@@ -80,3 +80,30 @@
     margin-bottom: 100px;
     height: 275px;
 } */
+
+/*MEDITATION*/
+
+#meditation_timer > .infographic__banner{
+    background-color: #6E58B1;
+    width: 50pt;
+    font-size: 30pt;
+}
+
+.meditation__block{
+    height: 200px;
+    outline: 1px solid black;
+    margin: 50px 0;
+}
+
+.meditation__block-image{
+    display: inline-block;
+    float: left;
+    outline: 1px solid black;
+    height: 200px;
+    width: 200px;
+}
+
+.meditation__block-content{
+    display: inline-block;
+    padding: 10px;
+}
