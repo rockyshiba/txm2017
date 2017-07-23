@@ -91,14 +91,16 @@
 
 .meditation__block{
     height: 150px;
-    outline: 1px solid black;
+    /* outline: 1px solid black; */
     margin: 25px 0;
+    background-color: lightgrey;
+    color: #6E58B1;
 }
 
 .meditation__block-image{
     display: inline-block;
     float: left;
-    outline: 1px solid black;
+    /* outline: 1px solid black; */
     height: 150px;
     width: 150px;
 }
@@ -109,6 +111,38 @@
     float: left;
 }
 
+.meditation__block-content > h4{
+    color: #a085df;
+}
+
+.meditation__block:hover{
+    background-color: rgba(110, 88, 177, 0.9);
+}
+
+.meditation__block:hover > .meditation__block-content > h3, .meditation__block:hover > .meditation__block-content > p{
+    color: white;
+}
+
 .meditation__audio{
     visibility: hidden;
+}
+
+#meditation__footer{
+    background-color: #6E58B1;
+    padding: 10px 20px;
+}
+
+#meditation__footer > img{
+    height: 130px;
+    display: inline-block;
+    float: left;
+    margin-right: 50px;
+}
+
+#meditation__footer > h2{
+    color: white;
+}
+
+#meditation__footer > h3{
+    color: #a085df;
 }

@@ -35,18 +35,28 @@
                                     <h4>the power of our breath</h4>
                                     <p>Lorem ipsum dolor sit amet</p>
                                 </div>
-                            </div>
+                            </div> 
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-lg-4 col-lg-offset-1">
                             <div class="meditation__block" data-audio="meditation__audio-two">
                                 <img src="./assets/images/meditation_breathingawareness-thumb.jpg" alt="Breathing awareness" class="meditation__block-image">
+                                <div class="meditation__block-content">
+                                    <h3>Breathing awareness</h3>
+                                    <h4>the power of our breath</h4>
+                                    <p>Lorem ipsum dolor sit amet</p>
+                                </div>
                             </div>
                         </div>
                         <div class="col-lg-4 col-lg-offset-2">
                             <div class="meditation__block" data-audio="meditation__audio-three">
                                 <img src="./assets/images/meditation_visualization-thumb.jpg" alt="Visualization" class="meditation__block-image">
+                                <div class="meditation__block-content">
+                                    <h3>Visualization</h3>
+                                    <h4>the power of our breath</h4>
+                                    <p>Lorem ipsum dolor sit amet</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -54,23 +64,33 @@
                         <div class="col-lg-4">
                             <div class="meditation__block" data-audio="meditation__audio-four">
                                 <img src="./assets/images/meditation_senseawareness-thumb.jpg" alt="Sense awareness" class="meditation__block-image">
+                                <div class="meditation__block-content">
+                                    <h3>Sense awareness</h3>
+                                    <h4>the power of our breath</h4>
+                                    <p>Lorem ipsum dolor sit amet</p>
+                                </div>
                             </div>
                         </div>
-                        <div class="col-lg-4">
-                            <div class="meditation__block">
-
-                            </div>
+                        <div class="col-lg-4 text-center">
+                            <img src="./assets/images/meditation_breathingawareness.png" height="400px" alt="Breathing awareness">
                         </div>
                         <div class="col-lg-4">
                             <div class="meditation__block" data-audio="meditation__audio-five">
                                 <img src="./assets/images/meditation_calmingthemind-thumb.jpg" alt="Calming the mind" class="meditation__block-image">
+                                <div class="meditation__block-content">
+                                    <h3>Calming the mind</h3>
+                                    <h4>the power of our breath</h4>
+                                    <p>Lorem ipsum dolor sit amet</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-lg-12">
-                            <div class="meditation__block">
-                                
+                            <div id="meditation__footer" class="meditation__block">
+                                <img src="./assets/images/meditation_timer-icon.png" alt="Meditation headphones">
+                                <h2>Meditation Timer</h2>
+                                <h3>The head and torso graphic I love</h3>
                             </div>
                         </div>
                     </div>
@@ -91,15 +111,20 @@
                     <source src="./assets/audio/meditation-sample-five.mp3" type="audio/mp3">
                 </audio>
                 <script>
-                    (function(){
+                    (function($){
                         $(".meditation__block").click(function(){
                             stopMeditationAudio();
+                            var meditationAudio = $(this).data("audio");
+                            document.getElementById(meditationAudio).play();
                         });
 
                         function stopMeditationAudio(){
-                            $(".meditation__audio").stop()
+                            $(".meditation__audio").each(function(){
+                                this.pause();
+                                this.currentTime = 0;
+                            });
                         }
-                    })()
+                    })(jQuery);
                 </script>
             </div><!--END container-->
         </main>
