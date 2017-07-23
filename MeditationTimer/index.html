@@ -28,11 +28,11 @@
                     </div>
                     <div class="row">
                         <div class="col-lg-4 col-lg-offset-4">
-                            <div class="meditation__block">
+                            <div class="meditation__block" data-audio="meditation__audio-one">
                                 <img src="./assets/images/meditation_bodyscan.jpg" alt="Body scan" class="meditation__block-image">
                                 <div class="meditation__block-content">
-                                    <h2>Body scan</h2>
-                                    <h3>the power of our breath</h3>
+                                    <h3>Body scan</h3>
+                                    <h4>the power of our breath</h4>
                                     <p>Lorem ipsum dolor sit amet</p>
                                 </div>
                             </div>
@@ -40,19 +40,19 @@
                     </div>
                     <div class="row">
                         <div class="col-lg-4 col-lg-offset-1">
-                            <div class="meditation__block">
+                            <div class="meditation__block" data-audio="meditation__audio-two">
                                 <img src="./assets/images/meditation_breathingawareness-thumb.jpg" alt="Breathing awareness" class="meditation__block-image">
                             </div>
                         </div>
                         <div class="col-lg-4 col-lg-offset-2">
-                            <div class="meditation__block">
+                            <div class="meditation__block" data-audio="meditation__audio-three">
                                 <img src="./assets/images/meditation_visualization-thumb.jpg" alt="Visualization" class="meditation__block-image">
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-lg-4">
-                            <div class="meditation__block">
+                            <div class="meditation__block" data-audio="meditation__audio-four">
                                 <img src="./assets/images/meditation_senseawareness-thumb.jpg" alt="Sense awareness" class="meditation__block-image">
                             </div>
                         </div>
@@ -62,7 +62,7 @@
                             </div>
                         </div>
                         <div class="col-lg-4">
-                            <div class="meditation__block">
+                            <div class="meditation__block" data-audio="meditation__audio-five">
                                 <img src="./assets/images/meditation_calmingthemind-thumb.jpg" alt="Calming the mind" class="meditation__block-image">
                             </div>
                         </div>
@@ -75,6 +75,32 @@
                         </div>
                     </div>
                 </div>
+                <audio id="meditation__audio-one" class="meditation__audio" controls>
+                    <source src="./assets/audio/meditation-sample-one.mp3" type="audio/mp3">
+                </audio>
+                <audio id="meditation__audio-two" class="meditation__audio" controls>
+                    <source src="./assets/audio/meditation-sample-two.mp3" type="audio/mp3">
+                </audio>
+                <audio id="meditation__audio-three" class="meditation__audio" controls>
+                    <source src="./assets/audio/meditation-sample-three.mp3" type="audio/mp3">
+                </audio>
+                <audio id="meditation__audio-four" class="meditation__audio" controls>
+                    <source src="./assets/audio/meditation-sample-four.mp3" type="audio/mp3">
+                </audio>
+                <audio id="meditation__audio-five" class="meditation__audio" controls>
+                    <source src="./assets/audio/meditation-sample-five.mp3" type="audio/mp3">
+                </audio>
+                <script>
+                    (function(){
+                        $(".meditation__block").click(function(){
+                            stopMeditationAudio();
+                        });
+
+                        function stopMeditationAudio(){
+                            $(".meditation__audio").stop()
+                        }
+                    })()
+                </script>
             </div><!--END container-->
         </main>
         <footer>
