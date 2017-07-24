@@ -40,19 +40,29 @@
                 <p>Click each fruit for fun facts and to see some of the benefits you might gain from adding them to your life:</p>
                 <nav>
                     <div class="super__fruit-item" data-fruit="super__fruit-acai">
-                        <img src="./assets/images/super_acai_thumb.jpg" alt="Acai thumb">
+                        <a href="#super__fruit-display">
+                            <img src="./assets/images/super_acai_thumb.jpg" alt="Acai thumb">
+                        </a>
                     </div>
                     <div class="super__fruit-item" data-fruit="super__fruit-goji">
-                        <img src="./assets/images/super_goji_thumb.jpg" alt="Goji thumb">
+                        <a href="#super__fruit-display">
+                            <img src="./assets/images/super_goji_thumb.jpg" alt="Goji thumb">
+                        </a>
                     </div>
                     <div class="super__fruit-item" data-fruit="super__fruit-kiwi">
+                        <a href="#super__fruit-display">
                         <img src="./assets/images/super_kiwi_thumb.jpg" alt="Kiwi thumb">
+                        </a>
                     </div>
                     <div class="super__fruit-item" data-fruit="super__fruit-dragonfruit">
-                        <img src="./assets/images/super_dragon_thumb.jpg" alt="Dragonfruit thumb">
+                        <a href="#super__fruit-display">
+                            <img src="./assets/images/super_dragon_thumb.jpg" alt="Dragonfruit thumb">
+                        </a>
                     </div>
                     <div class="super__fruit-item" data-fruit="super__fruit-mangosteen">
-                        <img src="./assets/images/super_mangosteen_thumb.jpg" alt="Mangosteen thumb">
+                        <a href="#super__fruit-display">
+                            <img src="./assets/images/super_mangosteen_thumb.jpg" alt="Mangosteen thumb">
+                        </a>
                     </div>
                 </nav>
 
@@ -110,6 +120,10 @@
                         hideAllFruits();
                         var fruitId = "#" + $(this).data("fruit");
                         $(fruitId).show();
+
+                        /*spin fruit title image*/
+                        console.log($(fruitId).children(".super__fruit-title"));
+                        $(fruitId).children(".super__fruit-title").addClass("super__fruit-title-rotate");
                     });
 
                     function hideAllFruits(){

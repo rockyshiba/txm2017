@@ -111,6 +111,14 @@
     float: left;
 }
 
+.meditation__block-content > h3{
+    font-size: 18px;
+}
+
+.meditation__block-content > h4{
+    font-size: 14px;
+}
+
 .meditation__block-content > h4{
     color: #a085df;
 }
@@ -145,4 +153,14 @@
 
 #meditation__footer > h3{
     color: #a085df;
+}
+
+#meditation__block-image-breathingawareness{
+    height: 400px;
+}
+
+@media only screen and (max-width: 1300px){
+    #meditation__block-image-breathingawareness{
+        height: 250px;
+    }
 }

@@ -16,7 +16,7 @@
     opacity: 1;
 }
 
-.super__fruit-item::after{
+/* .super__fruit-item::after{
     content: " ";
     position: absolute;
     top: 0;
@@ -25,7 +25,7 @@
     width: 100%;
     color: rgba(0, 0, 0);
     z-index: 10;
-}
+} */
 
 #super__fruit-display{
     position: relative;
@@ -42,6 +42,12 @@
 .super__fruit-title{
     display: inline-block;
     float: right;
+    transform: rotate(180deg);
+    transform-origin: center center;
+}
+
+.super__fruit-title-rotate{
+    transform: rotate(360deg);
 }
 
 .super__fruit-p{
