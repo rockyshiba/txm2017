@@ -42,13 +42,18 @@
 .super__fruit-title{
     display: inline-block;
     float: right;
-    transform: rotate(180deg);
+    /* transform: rotate(180deg); */
     transform-origin: center center;
 }
 
 .super__fruit-title-rotate{
-    transform: rotate(360deg);
+    /* transform: rotate(360deg); */
+    animation: spin 1s linear 1;
 }
+
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
 
 .super__fruit-p{
     display: inline-block;
@@ -59,4 +64,8 @@
     padding: 15px;
     color: white;
     background-color: #B4C43C;
+}
+
+#superfruits_whoosh{
+    display: none;
 }

@@ -101,6 +101,7 @@
                     <img src="./assets/images/pages/superfruits/super_mangosteen.jpg" height="50%" width="50%" class="super__fruit-image" alt="Mangosteen">
                 </div>
             </div>
+            <audio id="superfruits_whoosh" controls src="./assets/media/audio/pages/superfruits/superfruits_whoosh.mp3">Audio is not supported in your browser</audio>
             <script>
                 (function(){
                     hideAllFruits();
@@ -109,10 +110,18 @@
                         hideAllFruits();
                         var fruitId = "#" + $(this).data("fruit");
                         $(fruitId).show();
+
+                        /*spin fruit title image*/
+                        $(fruitId).children(".super__fruit-title").addClass("super__fruit-title-rotate");
+                        document.getElementById("superfruits_whoosh").currentTime = 0;
+                        document.getElementById("superfruits_whoosh").play();
                     });
 
                     function hideAllFruits(){
                         $(".super__fruit-info").hide();
+                        $(".super__fruit-title").each(function(){
+                            $(this).removeClass("super__fruit-title-rotate");
+                        });
                     }
                 })();
             </script>
