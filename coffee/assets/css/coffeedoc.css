@@ -1,0 +1,101 @@
+#coffee_doc > .infographic__banner{
+    background-color: #6E58B1;
+    width: 50pt;
+    font-size: 30pt;
+}
+
+#coffee_doc h2{
+    margin-top: 0;
+}
+
+#coffee_doc h3{
+    font-family: serif;
+}
+
+#coffee_doc-content{
+    padding-top: 20px;
+    margin-left: 80px;
+}
+
+#coffee_beans{
+    width: 100%;
+}
+
+.coffee_text{
+    color: white;
+    padding: 10px;
+}
+
+.coffee_text > h3{
+    margin-top: 0;
+}
+
+.coffee__arrow{
+
+}
+
+.coffee__debate{
+    color: white;
+    cursor: pointer;
+}
+
+.coffee__cup{
+    max-height: 190px;
+    margin-right: 10px;
+}
+
+.coffee__audio{
+    width: 100%;
+}
+
+.coffee__vote-container{
+    margin-bottom: 20px;
+}
+
+.coffee__vote{
+    max-height: 100px;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 1300px){
+    .coffee__arrow{
+        height: 80px;
+    }
+
+    .coffee__debate{
+        height: 100px;
+    }
+
+    .coffee__cup{
+        height: 100%;
+    }
+}
+
+/*colours*/
+.dark-purple{
+    color: #6E58B1;
+}
+
+.dark-purple-bg{
+    background-color: #6E58B1;
+}
+
+a.dark-purple-bg:hover{
+    background-color: #A085DF;
+}
+
+.dark-purple-shadow{
+    box-shadow: -5px 5px 0px #6E58B1;
+}
+
+.med-purple{
+    color: #A085DF;
+}
+
+.light-purple{
+    color: #B9A4F8;
+}
+
+.light-purple-bg{
+    background-color: #B9A4F8;
+}

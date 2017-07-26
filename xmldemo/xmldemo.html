@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div id="output">
+        
+    </div>
+    <script>
+        loadXml();
+
+        function loadXml(){
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function(){
+                if(this.readyState == 4 && this.status == 200){
+                    console.log("success");
+                    xmlQuery(this);
+                }
+            };
+            xhttp.open("GET", "books.xml", true);
+            xhttp.send(null);
+        }
+
+        function xmlQuery(xml){
+            var xmlDoc = xml.responseXML;
+            var bookStore = xmlDoc.getElementsByTagName("bookstore");
+            var newBook = xmlDoc.createElement("book");
+            xmlDoc.getElementsByTagName("bookstore")[0].appendChild(newBook);
+
+            var books = xmlDoc.getElementsByTagName("book");
+            console.log("number of books: " + books.length);
+            xmlDoc.documentElement.appendChild(newBook);
+        }
+        // $.ajax(
+        //     {
+        //         type: "GET",
+        //         dataType: "xml",
+        //         success: function(xml){
+        //             console.log("success");
+        //             $(xml).find("book").each(function(){
+        //                 var bookTitle = $(this).find("title").text();
+        //                 console.log(bookTitle);
+        //             });
+        //         }
+        //     }
+        // );
+    </script>
+</body>
+
+</html>
