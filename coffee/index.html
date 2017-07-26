@@ -74,17 +74,58 @@
                             </div>
                             <div class="col-lg-4">
                                 <p>Helper text</p>
+                                <input type="radio" name="coffee__vote" id="coffee__vote-yes" value="1">
+                                <input type="radio" name="coffee__vote" id="coffee__vote-no" value="0">
                                 <div class="coffee__vote-container">
-                                    <img class="coffee__vote" src="./assets/images/icon_positive.jpg" alt="Checkmark">
+                                    <label class="coffee__vote-label" for="coffee__vote-yes">
+                                        <img class="coffee__vote-image" src="./assets/images/icon_positive.jpg" alt="Checkmark">
+                                    </label>
                                 </div>
                                 <div class="coffee__vote-container">
-                                    <img class="coffee__vote" src="./assets/images/icon_negative.jpg" alt="X">
+                                    <label class="coffee__vote-label" for="coffee__vote-no">
+                                        <img class="coffee__vote-image" src="./assets/images/icon_negative.jpg" alt="X">
+                                    </label>
                                 </div>
                             </div>
                         </div>
                     </div><!--END #coffee_doc-content-->
                 </section>
+                <script src="https://www.gstatic.com/firebasejs/4.1.5/firebase.js"></script>
                 <script>
+                /*Initialize Firebase*/
+                var firebaseConfig = {
+                    apiKey: "AIzaSyAP1oNqViYiZKoFb8zI3QUzp5IoTB48Y6o",
+                    authDomain: "txm2017-acae7.firebaseapp.com",
+                    databaseURL: "https://txm2017-acae7.firebaseio.com",
+                    projectId: "txm2017-acae7",
+                    storageBucket: "txm2017-acae7.appspot.com",
+                    messagingSenderId: "357212621854"
+                };
+                firebase.initializeApp(firebaseConfig);
+                </script>
+                <script>
+                    (function(){
+                        var coffeeDb = firebase.database();
+
+                        writeCoffeeData("0");
+
+                        coffeeDb.ref('votes/').once('value', function(snap){
+                            console.log(JSON.stringify(snap.val()));
+                        });
+
+                        $(".coffee__vote-label").click(function(){
+                            $("input[name='coffee__vote']").change(function(){
+                                console.log($("input[name='coffee__vote']:checked").val());
+                            });
+                        });
+
+                        function writeCoffeeData(voteVal){
+                            var timestampNow = Date.now();
+                            coffeeDb.ref('votes/' + timestampNow).set({
+                                vote: voteVal
+                            });
+                        }
+                    })();
                 </script>
             </div><!--END container-->
         </main>
