@@ -52,6 +52,10 @@
     margin-bottom: 20px;
 }
 
+.coffee__vote-radio{
+    display: none;
+}
+
 .coffee__vote-image{
     max-height: 100px;
     cursor: pointer;

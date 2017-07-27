@@ -74,8 +74,8 @@
                             </div>
                             <div class="col-lg-4">
                                 <p>Helper text</p>
-                                <input type="radio" name="coffee__vote" id="coffee__vote-yes" value="1">
-                                <input type="radio" name="coffee__vote" id="coffee__vote-no" value="0">
+                                <input type="radio" name="coffee__vote" id="coffee__vote-yes" class="coffee__vote-radio" value="1">
+                                <input type="radio" name="coffee__vote" id="coffee__vote-no" class="coffee__vote-radio" value="0">
                                 <div class="coffee__vote-container">
                                     <label class="coffee__vote-label" for="coffee__vote-yes">
                                         <img class="coffee__vote-image" src="./assets/images/icon_positive.jpg" alt="Checkmark">  
@@ -92,7 +92,7 @@
                                         
                                     </div>
                                 </div>
-                                <p id="coffee_vote-result-message">Here's how everyone responded</p>
+                                <p id="coffee__vote-result-message">Here's how everyone responded</p>
                             </div>
                         </div>
                     </div><!--END #coffee_doc-content-->
@@ -112,11 +112,14 @@
                 </script>
                 <script>
                     (function(){
+                        /*Visuals*/
+                        $(".coffee__vote-display").hide();
+                        $("#coffee__vote-result-message").hide();
+
+                        /*DB*/
                         var coffeeDb = firebase.database();
 
-
-
-                        writeCoffeeData("1");
+                        /*writeCoffeeData("1");*/
 
                         coffeeDb.ref('votes/').once('value', function(snap){
                             console.log("There are " + snap.numChildren() + " votes");
@@ -167,6 +170,8 @@
                         $(".coffee__vote-label").click(function(){
                             $("input[name='coffee__vote']").change(function(){
                                 console.log($("input[name='coffee__vote']:checked").val());
+                                var userCoffeeVote = $("input[name='coffee__vote']:checked").val();
+                                writeCoffeeData(userCoffeeVote);
                             });
                         });
 
@@ -181,7 +186,12 @@
                             var divWidth = Math.floor(votePercentage) + "px";
                             document.getElementById(elem).style.width = divWidth;
                             document.getElementById(elem).innerHTML = Math.floor(votePercentage) + "% " + message;
+                        
+                            $(".coffee__vote-display").show();
+                            $("#coffee__vote-result-message").show();
                         }
+
+                        
                     })();
                 </script>
             </div><!--END container-->
