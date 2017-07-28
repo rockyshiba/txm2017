@@ -30,10 +30,6 @@
     margin-top: 0;
 }
 
-.coffee__arrow{
-
-}
-
 .coffee__debate{
     color: white;
     cursor: pointer;
@@ -57,7 +53,7 @@
 }
 
 .coffee__vote-image{
-    max-height: 100px;
+    max-height: 130px;
     cursor: pointer;
 }
 

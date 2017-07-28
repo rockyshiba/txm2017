@@ -34,11 +34,14 @@
                             <div class="col-lg-4">
                                 <div class="row" style="display: flex; align-items: center;">
                                     <div class="col-lg-8">
-                                        <p>Helper text</p>
+                                        <p>We sat down to unpack the complicated relationship between coffee and the people who drink it.</p>
                                         <img id="coffee_beans" src="./assets/images/coffee_cl.jpg" alt="Coffee beans">
                                         <div class="coffee_text dark-purple-bg">
-                                            <h3>Coffee</h3>
-                                            <p>and a little more about coffee</p>
+                                            <h3 style="font-family: sans-serif;">Coffee</h3>
+                                            <p>Coffee: An Introduction</p>
+                                            <audio id="coffee__audio-intro" controls>
+                                                <source src="./assets/audio/Coffee-Intro-v2.mp3" type="audio/mp3">
+                                            </audio>
                                         </div>
                                     </div>
                                     <div class="col-lg-4">
@@ -46,21 +49,21 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-4">
+                            <div id="coffee__bianca-stephen" class="col-lg-4">
                                 <div class="row" style="display: flex; align-items: center;">
                                     <div class="col-lg-8">
                                         <div class="coffee__debate-container">
-                                            <p>Helper text</p>
+                                            <p>Explore a few perspectives on coffee, below.</p>
                                             <div class="coffee__debate dark-purple-bg" style="margin-bottom: 40px;">
                                                 <img class="coffee__cup" src="./assets/images/coffee_ct.jpg" alt="Artisan coffee">
-                                                pro coffee
-                                                <audio id="coffee__audio-bianaca" class="coffee__audio" controls>
+                                                Bianca Pettinaro
+                                                <audio id="coffee__audio-bianca" class="coffee__audio" controls>
                                                     <source src="./assets/audio/Coffee-Bianca-v1.mp3" type="audio/mp3">
                                                 </audio>
                                             </div>
                                             <div class="coffee__debate dark-purple-bg">
                                                 <img class="coffee__cup" src="./assets/images/coffee_cb.jpg" alt="Cup of coffee">
-                                                anti coffee
+                                                Stephen Bonnyman
                                                 <audio id="coffee__audio-steve" class="coffee__audio" controls>
                                                     <source src="./assets/audio/Coffee-Steve-v1.mp3" type="audio/mp3">
                                                 </audio>
@@ -72,12 +75,13 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-4">
-                                <p>Helper text</p>
+                            <div id="coffee__vote-column" class="col-lg-4">
+                                <p>What are you drinking?</p>
                                 <input type="radio" name="coffee__vote" id="coffee__vote-yes" class="coffee__vote-radio" value="1">
                                 <input type="radio" name="coffee__vote" id="coffee__vote-no" class="coffee__vote-radio" value="0">
                                 <div class="coffee__vote-container">
                                     <label class="coffee__vote-label" for="coffee__vote-yes">
+                                        <p>Only coffee</p>
                                         <img class="coffee__vote-image" src="./assets/images/icon_positive.jpg" alt="Checkmark">  
                                     </label>
                                     <div id="coffee__vote-display-yes" class="coffee__vote-display">
@@ -86,6 +90,7 @@
                                 </div>
                                 <div class="coffee__vote-container">
                                     <label class="coffee__vote-label" for="coffee__vote-no">
+                                        <p>Anything but coffee</p>
                                         <img class="coffee__vote-image" src="./assets/images/icon_negative.jpg" alt="X">
                                     </label>
                                     <div id="coffee__vote-display-no" class="coffee__vote-display">
@@ -112,68 +117,90 @@
                 </script>
                 <script>
                     (function(){
+                        $("#coffee__bianca-stephen").hide();
+                        $("#coffee__vote-column").hide();
                         /*Visuals*/
                         $(".coffee__vote-display").hide();
                         $("#coffee__vote-result-message").hide();
+
+                        $("#coffee__audio-intro").on('play', function(){
+                            $("#coffee__bianca-stephen").show();
+                        });
+
+                        $("#coffee__audio-bianca").on('play', function(){
+                            if(document.getElementById("coffee__audio-steve").currentTime > 0){
+                                $("#coffee__vote-column").show();
+                            }
+                        });
+
+                        $("#coffee__audio-steve").on('play', function(){
+                            if(document.getElementById("coffee__audio-bianca").currentTime > 0){
+                                $("#coffee__vote-column").show();
+                            }
+                        });
 
                         /*DB*/
                         var coffeeDb = firebase.database();
 
                         /*writeCoffeeData("1");*/
-
-                        coffeeDb.ref('votes/').once('value', function(snap){
-                            console.log("There are " + snap.numChildren() + " votes");
-                            var votes = $.parseJSON(JSON.stringify(snap.val()));
-                            
-                            var voteTotal = snap.numChildren();
-                            var voteCountYes = 0;
-                            var voteCountYesPercentage;
-                            var voteCountNo = 0;
-                            var voteCountNoPercentage;
-                        
-                            snap.forEach(function(child){
-                                var key = child.key; /*The timestamp*/
-
-                                var value = child.val();
-                                var vote = value.vote; /*The vote object's value*/
-
-                                console.log(key);
-                                console.log(vote);
-
-                                if(vote == 1){
-                                    voteCountYes++;
-                                }
-                                else{
-                                    voteCountNo++;
-                                }
-
-                                console.log("Yes votes total: " + voteCountYes);
-                                console.log("No votes total: " + voteCountNo);
-
-                                /*Time of vote*/
-                                var keyMilliseconds = new Date(parseInt(key));
-                                console.log(keyMilliseconds.toUTCString().split(' '));
-                                var voteHour = keyMilliseconds.toUTCString().split(' ')[4];
-                                console.log("Hour of vote GMT: " + voteHour);
-                            });
-
-                            voteCountYesPercentage = voteCountYes / voteTotal * 100;
-                            voteCountNoPercentage = voteCountNo / voteTotal * 100;
-
-                            console.log("Yes %: " + voteCountYesPercentage);
-                            console.log("No %: " + voteCountNoPercentage);
-
-                            displayCoffeeData("coffee__vote-display-yes", voteCountYes, voteCountYesPercentage, "");
-                            displayCoffeeData("coffee__vote-display-no", voteCountNo, voteCountNoPercentage, "");
-                        });
-
                         $(".coffee__vote-label").click(function(){
                             $("input[name='coffee__vote']").change(function(){
                                 console.log($("input[name='coffee__vote']:checked").val());
                                 var userCoffeeVote = $("input[name='coffee__vote']:checked").val();
                                 writeCoffeeData(userCoffeeVote);
                             });
+
+                            tallyCoffeeData();
+                            $(".coffee__vote-label").unbind();
                         });
+
+                        function tallyCoffeeData(){
+                            coffeeDb.ref('votes/').once('value', function(snap){
+                                console.log("There are " + snap.numChildren() + " votes");
+                                var votes = $.parseJSON(JSON.stringify(snap.val()));
+                                
+                                var voteTotal = snap.numChildren();
+                                var voteCountYes = 0;
+                                var voteCountYesPercentage;
+                                var voteCountNo = 0;
+                                var voteCountNoPercentage;
+                            
+                                snap.forEach(function(child){
+                                    var key = child.key; /*The timestamp*/
+
+                                    var value = child.val();
+                                    var vote = value.vote; /*The vote object's value*/
+
+                                    console.log(key);
+                                    console.log(vote);
+
+                                    if(vote == 1){
+                                        voteCountYes++;
+                                    }
+                                    else{
+                                        voteCountNo++;
+                                    }
+
+                                    console.log("Yes votes total: " + voteCountYes);
+                                    console.log("No votes total: " + voteCountNo);
+
+                                    /*Time of vote*/
+                                    var keyMilliseconds = new Date(parseInt(key));
+                                    console.log(keyMilliseconds.toUTCString().split(' '));
+                                    var voteHour = keyMilliseconds.toUTCString().split(' ')[4];
+                                    console.log("Hour of vote GMT: " + voteHour);
+                                });
+
+                                voteCountYesPercentage = voteCountYes / voteTotal * 100;
+                                voteCountNoPercentage = voteCountNo / voteTotal * 100;
+
+                                console.log("Yes %: " + voteCountYesPercentage);
+                                console.log("No %: " + voteCountNoPercentage);
+
+                                displayCoffeeData("coffee__vote-display-yes", voteCountYes, voteCountYesPercentage, "");
+                                displayCoffeeData("coffee__vote-display-no", voteCountNo, voteCountNoPercentage, "");
+                            });
+                        }
 
                         function writeCoffeeData(voteVal){
                             var timestampNow = Date.now();
@@ -185,7 +212,7 @@
                         function displayCoffeeData(elem, voteRaw, votePercentage, message){
                             var divWidth = Math.floor(votePercentage) + "px";
                             document.getElementById(elem).style.width = divWidth;
-                            document.getElementById(elem).innerHTML = Math.floor(votePercentage) + "% " + message;
+                            document.getElementById(elem).insertAdjacentHTML('afterEnd', " " + Math.floor(votePercentage) + "% " + message + "(" + voteRaw + ")");
                         
                             $(".coffee__vote-display").show();
                             $("#coffee__vote-result-message").show();
