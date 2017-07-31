@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>My Why</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="../global/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="../global/css/infographics.css">
+        <link rel="stylesheet" type="text/css" href="./mywhy.css">
+        <script src="../global/js/jquery-3.2.1.min.js"></script>
+        <script src="../global/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <section id="mywhy" class="infographic"><!--BEGIN section-->
+            <div class="infographic__banner dark-blue-bg">
+                <p>
+                    <span>O</span>
+                    <span>I</span>
+                    <span>D</span>
+                    <span>U</span>
+                    <span>A</span>
+                </p>
+                <img src="../global/images/audiopage-icon.png" alt="Audio icon">
+            </div>
+            <div class="container-fluid"><!--BEGIN container-->
+                <div class="row">
+                    <div class="mywhy__row">
+                        <div class="col-lg-2">
+                            <div class="mywhy__header">
+                                <h2 class="text-uppercase">my why</h2>
+                                <h4 class="med-blue"><em>Everyone has a reason why.</em></h4>
+                            </div>  
+                        </div>
+                        <div class="col-lg-3">
+                            <p class="mywhy__text">"My temple is my body, it's on lend to me and so my reponsibility is to take care of it."</p>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="text-center">
+                                <img class="mywhy__image" src="./assets/images/pages/mywhy/placeholder.jpg" alt="Man pushing weights">
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <p class="mywhy__text">"My why is, I just want to feel better, like that's kind of the bottom line. I just want to feel better."</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="mywhy__row">
+                        <div class="col-lg-4">
+                            <div class="text-center">
+                                <img class="mywhy__image" src="./assets/images/pages/mywhy/placeholder.jpg" alt="Woman rock climbing">
+                            </div>
+                            <div class="mywhy__bluebar dark-blue-bg">
+                                
+                            </div>
+                        </div>
+                        <div id="mywhy__audio-description" class="col-lg-4 dark-blue-bg">
+                            <h3>My Why</h3>
+                            <p>A quick description of the audio piece.</p>
+                            <audio id="mywhy__audio" controls>
+                                <source src="./assets/media/audio/pages/mywhy/my-why.mp3" type="audio/mp3">
+                            </audio>
+                            <!-- <form id="mywhy__form" class="text-right">
+                                <textarea rows="" cols=""></textarea>
+                                <input type="submit" name="mywhy__submit" value="SUBMIT" class="dark-blue-bg med-blue-shadow">
+                            </form> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="mywhy__row">
+                        <div class="col-lg-4 col-lg-offset-1">
+                            <p class="mywhy__text">
+                                "You can have money, you can have glory, you can have fame, but if you don't have health, all those things quickly become meaningless."
+                            </p>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="text-center">
+                                <p class="mywhy__text">"I feel as though there's always room for improvement."</p>    
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <img id="mywhy__fruits-vegetables" src="./assets/images/pages/mywhy/mywhy__fruits-vegetables.jpg" alt="Fruits and vegetables">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div id="mywhy__footer" class="col-lg-10 col-lg-offset-2 dark-blue-bg">
+                        <p id="mywhy__footer-text" class="mywhy__text">"If you're not healthy, your mind doesn't work. You can't learn with an unhealthy mind"</p>
+                    </div>
+                </div>
+            </div><!--END container-->
+            <script src="https://www.gstatic.com/firebasejs/4.1.5/firebase.js"></script>
+            <script>
+                /*Initialize Firebase*/
+                var firebaseConfig = {
+                    apiKey: "AIzaSyAP1oNqViYiZKoFb8zI3QUzp5IoTB48Y6o",
+                    authDomain: "txm2017-acae7.firebaseapp.com",
+                    databaseURL: "https://txm2017-acae7.firebaseio.com",
+                    projectId: "txm2017-acae7",
+                    storageBucket: "txm2017-acae7.appspot.com",
+                    messagingSenderId: "357212621854"
+                };
+                firebase.initializeApp(firebaseConfig);
+            </script>
+            <script>
+                (function(){
+                    /*FIREBASE*/
+                    var mywhyDb = firebase.database();
+                    /*END FIREBASE*/
+
+                    $(".mywhy__text").hide();
+
+                    var myWhyTextIndex = 0;
+                    var myWhyTextInterval = setInterval(function(){
+                        if(myWhyTextIndex < document.getElementsByClassName("mywhy__text").length){
+                            console.log("show");
+                            $(".mywhy__text").eq(myWhyTextIndex).show(200);
+                            myWhyTextIndex++;
+                        }
+                        else{
+                            console.log("end");
+                            clearInterval(myWhyTextInterval);
+                        }
+                    }, 1000);
+                    
+                    $("#mywhy__audio").on("ended", function(){
+                        $("#mywhy__audio-description").html('<h3 style="color: black;">Whats your why?</h3><form id="mywhy__form" class="text-right"><textarea id="mywhy__textarea" rows="" cols=""></textarea><input type="submit" name="mywhy__submit" value="SUBMIT" class="dark-blue-bg med-blue-shadow"></form>');
+                    
+                        $("#mywhy__form").submit(function(){
+                            var mywhyTextareaValue = $("#mywhy__textarea").val();
+                            addMywhy(mywhyTextareaValue);
+
+                            $("#mywhy__audio-description").html("<h4>Sent!</h4>");
+
+                            displayMywhyData(".mywhy__text", 4);
+
+                            return false;
+                        });
+                    });
+
+                    function addMywhy(text){
+                        var timestampNow = Date.now();
+                        mywhyDb.ref('mywhy/' + timestampNow).set({
+                            userInput: text
+                        });
+                    }
+
+                    function displayMywhyData(elems, limitNum){
+                        /*Get mywhy data*/
+                        mywhyDb.ref('mywhy/').limitToLast(limitNum).once('value', function(snap){
+                            var mywhyIndex = 0;
+
+                            snap.forEach(function(child){
+                                var userInput = child.val().userInput;
+                                $(elems).eq(mywhyIndex).html(userInput);
+                                mywhyIndex++;
+                            });
+                        });
+                    }
+                })();
+            </script>
+        </section><!--END section-->
+    </body>
+</html>

@@ -1,0 +1,120 @@
+#mywhy{
+    padding-top: 30px;
+}
+
+#mywhy > .infographic__banner{
+
+}
+
+.mywhy__header{
+    padding-left: 40px;
+}
+
+.mywhy__header h4{
+    font-family: serif;
+}
+
+.mywhy__bluebar{
+    height: 50px;
+    z-index: -10;
+    position: absolute;
+    top: 20px;
+    left: 0;
+    width: 90%;
+}
+
+#mywhy audio{
+    width: 100%;
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+}
+
+#mywhy__audio-description{
+    color: white;
+}
+
+#mywhy__form{
+    display: block;
+    height: 100%;
+}
+
+#mywhy__form > textarea{
+    width: 100%;
+    height: 50%;
+    color: black;
+}
+
+.mywhy__row{
+    display: flex;
+    min-height: 100px;
+}
+
+.mywhy__text{
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    font-size: 2em;
+}
+
+.mywhy__image{
+    margin: 0 auto;
+    width: 60%;
+}
+
+#mywhy__fruits-vegetables{
+    /* position: absolute;
+    left: 0px;
+    top: -100px; */
+}
+
+#mywhy__footer{
+    height: 50px;
+    padding: 5px;
+}
+
+#mywhy__footer-text{
+    color: white;
+    position: relative;
+    height: 50px;
+    left: initial;
+    bottom: initial;
+    margin: 0;
+}
+/*******/
+
+.dark-blue{
+    color: #0FBDEC;
+}
+
+.dark-blue-bg{
+    background-color: #0FBDEC;
+}
+
+.dark-blue-shadow{
+    box-shadow: -5px 5px 0px #0FBDEC;
+}
+
+.med-blue{
+    color: #3AC8E9;
+}
+
+.med-blue-bg{
+    background-color: #3AC8E9;
+}
+
+.med-blue-shadow{
+    box-shadow: -5px 5px 0px #3AC8E9;
+}
+
+.light-blue{
+    color: #66D5EE;
+}
+
+.light-blue-bg{
+    background-color: #66D5EE;
+}
+
+.light-blue-shadow{
+    box-shadow: -5px 5px 0px #66D5EE;
+}
