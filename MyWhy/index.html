@@ -132,7 +132,7 @@
                     
                         $("#mywhy__form").submit(function(){
                             var mywhyTextareaValue = $("#mywhy__textarea").val();
-                            if(mywhyTextareaValue != "" && mywhyTextareaValue != null){
+                            if(mywhyTextareaValue.trim() != "" && mywhyTextareaValue.trim() != null){
                                 addMywhy(mywhyTextareaValue);
                             
                                 $("#mywhy__audio-description").html("<h4 style='margin-left: 10px;'>Sent!</h4>");
