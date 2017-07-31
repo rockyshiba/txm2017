@@ -36,7 +36,7 @@
                         </div>
                         <div class="col-lg-4">
                             <div class="text-center">
-                                <img class="mywhy__image" src="./assets/images/pages/mywhy/placeholder.jpg" alt="Man pushing weights">
+                                <img class="mywhy__image" src="./assets/images/pages/mywhy/mywhy_t.jpg" alt="Man pushing weights">
                             </div>
                         </div>
                         <div class="col-lg-3">
@@ -48,15 +48,18 @@
                     <div class="mywhy__row">
                         <div class="col-lg-4">
                             <div class="text-center">
-                                <img class="mywhy__image" src="./assets/images/pages/mywhy/placeholder.jpg" alt="Woman rock climbing">
+                                <img class="mywhy__image" src="./assets/images/pages/mywhy/mywhy_l.jpg" alt="Woman rock climbing">
                             </div>
                             <div class="mywhy__bluebar dark-blue-bg">
                                 
                             </div>
                         </div>
                         <div id="mywhy__audio-description" class="col-lg-4 dark-blue-bg">
-                            <h3>My Why</h3>
-                            <p>A quick description of the audio piece.</p>
+                            <div>
+                                <img id="mywhy__play-button" src="./assets/images/pages/mywhy/mywhy_play_button.jpg" alt="Fruits and vegetables">
+                                <h3>My Why</h3>
+                                <p>A quick description of the audio piece.</p>
+                            </div>
                             <audio id="mywhy__audio" controls>
                                 <source src="./assets/media/audio/pages/mywhy/my-why.mp3" type="audio/mp3">
                             </audio>
@@ -80,7 +83,7 @@
                             </div>
                         </div>
                         <div class="col-lg-3">
-                            <img id="mywhy__fruits-vegetables" src="./assets/images/pages/mywhy/mywhy__fruits-vegetables.jpg" alt="Fruits and vegetables">
+                            <img id="mywhy__fruits-vegetables" src="./assets/images/pages/mywhy/mywhy_r.jpg" alt="Fruits and vegetables">
                         </div>
                     </div>
                 </div>
@@ -125,15 +128,17 @@
                     }, 1000);
                     
                     $("#mywhy__audio").on("ended", function(){
-                        $("#mywhy__audio-description").html('<h3 style="color: black;">Whats your why?</h3><form id="mywhy__form" class="text-right"><textarea id="mywhy__textarea" rows="" cols=""></textarea><input type="submit" name="mywhy__submit" value="SUBMIT" class="dark-blue-bg med-blue-shadow"></form>');
+                        $("#mywhy__audio-description").html('<h3 style="color: black; margin-left: 10px;">Whats your why?</h3><form id="mywhy__form" class="text-right"><textarea id="mywhy__textarea" rows="" cols=""></textarea><div class="text-right"><input type="submit" name="mywhy__submit" value="SUBMIT" class="dark-blue-bg med-blue-shadow"></div></form>');
                     
                         $("#mywhy__form").submit(function(){
                             var mywhyTextareaValue = $("#mywhy__textarea").val();
-                            addMywhy(mywhyTextareaValue);
+                            if(mywhyTextareaValue != "" && mywhyTextareaValue != null){
+                                addMywhy(mywhyTextareaValue);
+                            
+                                $("#mywhy__audio-description").html("<h4 style='margin-left: 10px;'>Sent!</h4>");
 
-                            $("#mywhy__audio-description").html("<h4>Sent!</h4>");
-
-                            displayMywhyData(".mywhy__text", 4);
+                                displayMywhyData(".mywhy__text", 4);
+                            }
 
                             return false;
                         });

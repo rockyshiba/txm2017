@@ -26,23 +26,36 @@
 #mywhy audio{
     width: 100%;
     position: absolute;
-    bottom: 10px;
+    bottom: 0;
     left: 0;
 }
 
 #mywhy__audio-description{
     color: white;
+    padding: 0;
+}
+
+#mywhy__play-button{
+    max-height: 150px;
+    float: left;
+    margin-right: 10px;
+}
+
+#mywhy__audio-description h3, #mywhy__audio-description p{
+    display: inline-block;
 }
 
 #mywhy__form{
     display: block;
     height: 100%;
+    text-align: center;
 }
 
 #mywhy__form > textarea{
-    width: 100%;
+    width: 85%;
     height: 50%;
     color: black;
+    margin: 0 auto;
 }
 
 .mywhy__row{
@@ -54,18 +67,22 @@
     position: absolute;
     left: 10px;
     bottom: 10px;
-    font-size: 2em;
+    font-size: 1.5em;
 }
 
 .mywhy__image{
     margin: 0 auto;
+    margin-bottom: 15px;
     width: 60%;
 }
+
+
 
 #mywhy__fruits-vegetables{
     /* position: absolute;
     left: 0px;
     top: -100px; */
+    max-height: 200px;
 }
 
 #mywhy__footer{
