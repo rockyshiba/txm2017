@@ -1,0 +1,14 @@
+#admin-main{
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.display-column{
+    display: inline-block;
+    width: 49%;
+    outline: 1px solid black;
+}
+
+.display-list > li{
+    margin-bottom: 10px;
+}
