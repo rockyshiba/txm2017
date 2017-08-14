@@ -3,6 +3,10 @@
     margin: 0 auto;
 }
 
+#approved{
+    float: left;
+}
+
 .display-column{
     display: inline-block;
     width: 49%;
@@ -11,4 +15,20 @@
 
 .display-list > li{
     margin-bottom: 10px;
+}
+
+.btn-moderate{
+    color: white;
+}
+
+.btn-remove{
+    color: black;
+}
+
+.btn-approve{
+    background-color: green;
+}
+
+.btn-delete{
+    background-color: red;
 }

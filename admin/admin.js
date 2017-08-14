@@ -33,6 +33,12 @@ $(document).on('mouseover', '.btn-moderate', function(){
         //displayApproved();
         location.reload();
     });
+
+    $(".btn-delete").click(function(){
+        var thisId = $(this).data('id');
+        mywhyDb.ref('mywhy/' +  thisId).remove();
+        location.reload();
+    });
 })
 
 function displayApproved(){
@@ -65,6 +71,7 @@ function displayApproved(){
                 "</li>";
                 document.getElementById("unapproved-list").innerHTML += liContent;
                 makeButton(timeStamp, child.val().userInput, "Approve", "btn-approve btn-moderate");
+                makeButton(timeStamp, child.val().userInput, "Delete", "btn-delete btn-moderate");
             }
         });
     });
